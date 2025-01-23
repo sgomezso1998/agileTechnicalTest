@@ -1,4 +1,4 @@
-$grey-color: rgb(202, 202, 202);
+
 
 .app-bar {
     display: flex;
@@ -9,13 +9,13 @@ $grey-color: rgb(202, 202, 202);
     height: 4em;
   
     &--header {
-      border-bottom: 0.1em solid $grey-color;
+      border-bottom: 0.1em solid var(--primary-grey);
     }
   
     &--footer {
       position: fixed;
       bottom: 0;
-      background-color: $grey-color;
+      background-color: var(--primary-grey);
     }
   
     &__left {
