@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1em;
+  width: 26em;
 
   &__input-container {
     position: relative;
@@ -33,5 +34,6 @@
     border: none;
     background-color: var(--primary-grey);
     padding: 0.7em;
+    cursor: pointer;
   }
 }

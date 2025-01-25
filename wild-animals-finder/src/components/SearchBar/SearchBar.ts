@@ -1,6 +1,8 @@
 export interface SearchBarProps {
-    placeHolder: string;
-    onSearch: (query: string) => void;
-    width?: number
+    onSearch?: (query: string) => void;
+    button: boolean;
+    placeHolder?: string;
+    height?: number;
+    searchText?: string;
 }
   

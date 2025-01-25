@@ -15,4 +15,13 @@ const data = [...new Array(100)].map((item, index) => {
     image: getImage(),
   };
 });
+
+export const fetchData = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(data);
+    }, 2000); // Simulate a 2-second delay
+  });
+};
+
 export default data;

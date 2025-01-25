@@ -1,10 +1,14 @@
 import './App.scss';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './Router.tsx';
 import Home from './screens/Home/Home.tsx';
 
 function App() {
   return (
-    <div className='App'>
-      <Home title='Esto es la Home'></Home>
+    <div>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </div>
   );
 }
