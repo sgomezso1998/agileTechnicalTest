@@ -5,7 +5,6 @@ import { SearchResultProps } from './SearchResult.ts';
 const SearchResult: React.FC<SearchResultProps> = ({ item, onClick }) => {
 
   const handleClick = () => {
-    console.log('Click en: ' + item?.id);
     onClick(item?.id);
   };
 

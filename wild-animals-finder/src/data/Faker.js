@@ -6,7 +6,7 @@ const getUrl = () => faker.internet.url();
 const getText = () => faker.lorem.sentences();
 const getTitle = (type) => faker.animal[type]();
 
-const data = [...new Array(15)].map((_, index) => {
+const data = [...new Array(100)].map((_, index) => {
   const type = getType();
   return {
     type,
@@ -18,10 +18,15 @@ const data = [...new Array(15)].map((_, index) => {
   };
 });
 
-export const fetchData = () => {
+export const fetchData = (searchQuery) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(data);
+      const filteredData = data.filter(
+        (item) =>
+          item.type.toLowerCase() == searchQuery.toLowerCase() ||
+          item.title.toLowerCase() == searchQuery.toLowerCase(),
+      );
+      resolve(filteredData);
     }, 2000);
   });
 };

@@ -12,7 +12,6 @@ const Home: React.FC<HomeProps> = ({title}) => {
   const { navigateTo } = useNavigation();
   
   const handleSearch = (query: string) => {
-    console.log('Home:', query);
     navigateTo(routesPath.results, { search: query });
   };
 

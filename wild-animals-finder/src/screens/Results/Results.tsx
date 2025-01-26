@@ -22,7 +22,6 @@ const Results: React.FC = () => {
   const mockItems = 15;
 
   const handleSearch = (query: string) => {
-    console.log('Results:', query);
     navigateTo(routesPath.results, { search: query });
   };
 
@@ -39,7 +38,7 @@ const Results: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const result = await fetchData();
+        const result = await fetchData(searchQuery);
         setList(result as SearchResultItem[]);
         setLoading(false);
       } catch (err) {
@@ -49,19 +48,41 @@ const Results: React.FC = () => {
     };
 
     loadData();
-  }, []);
+
+    return () => {
+      setList([]);
+      setItem(undefined);
+      setLoading(true);
+    };
+
+  }, [searchQuery]);
+
+  useEffect(() => {
+    const selectFirstResult = () => {
+      showDetails(list[0]?.id);
+    };
+
+    selectFirstResult();
+
+    return () => {
+      setItem(undefined);
+    };
+
+  }, [list]);
 
   return (
     <div className="results-container">
-      <div className="results-container__header">
-        <AppBar position={0} searchQuery={searchQuery} onSearch={handleSearch}></AppBar>
-      </div>
-      <div className="results-container__list">
-        <List items={list} loading={loading} mockItems={mockItems} onClick={showDetails}></List>
-        <Detail url={item?.url} title={item?.title} img={item?.image} description={item?.description}></Detail>
-      </div>
-      <div className="results-container__footer">
-        <AppBar subtitle="&copy; Google 2021" subtitle2="version 1.0.1" position={1}></AppBar>
+      <div className='overlay-container'>
+        <div className="results-container__header">
+          <AppBar position={0} searchQuery={searchQuery} onSearch={handleSearch}></AppBar>
+        </div>
+        <div className="results-container__list">
+          <List items={list} loading={loading} mockItems={mockItems} onClick={showDetails} searchQuery={searchQuery}></List>
+          <Detail url={item?.url} title={item?.title} img={item?.image} description={item?.description}></Detail>
+        </div>
+        <div className="results-container__footer">
+          <AppBar subtitle="&copy; Google 2021" subtitle2="version 1.0.1" position={1}></AppBar>
+        </div>
       </div>
     </div>
   );
