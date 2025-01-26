@@ -1,6 +1,9 @@
 .results-container {
     &__list {
-        padding: 0% 1% 0% 4%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        padding: 1% 1% 0% 5%;
     }
 }
 

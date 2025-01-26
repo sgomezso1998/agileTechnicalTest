@@ -7,7 +7,7 @@ import logo from '../../resources/images/google.png';
 import useNavigation from '../../Navigation.tsx';
 import routesPath from '../../Router.ts';
 
-const Home: React.FC<HomeProps> = ({ title }) => {
+const Home: React.FC<HomeProps> = ({title}) => {
 
   const { navigateTo } = useNavigation();
   

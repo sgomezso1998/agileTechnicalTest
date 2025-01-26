@@ -1,10 +1,12 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
+
 const getImage = () => faker.image.animals(644, 362, true);
 const getType = () => faker.animal.type();
 const getUrl = () => faker.internet.url();
 const getText = () => faker.lorem.sentences();
 const getTitle = (type) => faker.animal[type]();
-const data = [...new Array(100)].map((item, index) => {
+
+const data = [...new Array(15)].map((_, index) => {
   const type = getType();
   return {
     type,
@@ -20,7 +22,7 @@ export const fetchData = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(data);
-    }, 2000); // Simulate a 2-second delay
+    }, 2000);
   });
 };
 

@@ -10,11 +10,6 @@ const AppBar: React.FC<AppBarProps> = ({ title, subtitle, subtitle2, position, s
   const isHeader = position === 0;
   const topSearchBarHeight = 0.75;
 
-  const handleSearch = (query: string) => {
-    //console.log('AppBar:', query);
-    // navigateTo(routesPath.results, { search: query });
-  };
-
   const appBarClass = `
     app-bar 
     ${isHeader ? 'app-bar--header' : 'app-bar--footer'} 

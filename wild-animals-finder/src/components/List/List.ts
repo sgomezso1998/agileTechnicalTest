@@ -4,5 +4,6 @@ export interface ListProps {
     items: SearchResultItem[];
     loading?: boolean;
     mockItems?: number;
+    onClick: (id: string) => void 
 }
  

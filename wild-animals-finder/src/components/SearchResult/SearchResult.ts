@@ -9,5 +9,6 @@ export interface SearchResultItem {
 
 export interface SearchResultProps {
     item?: SearchResultItem;
+    onClick: (query: string) => void 
 }
   

@@ -1,0 +1,28 @@
+.detail-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 25em;
+    height: 25em;
+    color: var(--light-black);
+    border: 0.1em solid var(--primary-grey);
+    padding: 1em;
+
+    &__title {
+        font-weight: 700;
+    }
+
+    &__image {
+        width: -webkit-fill-available;
+        transition: all 1s ease;
+    }
+
+    &__description {
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+}

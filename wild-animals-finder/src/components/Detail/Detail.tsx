@@ -2,15 +2,20 @@ import React from 'react';
 import './Detail.scss';
 import { DetailProps } from './Detail.ts';
 
-const Detail: React.FC<DetailProps> = ({ img, url, title, subtitle }) => {
+const Detail: React.FC<DetailProps> = ({ img, url, title, description }) => {
 
   return (
-    <div className="item-container">
-      <img src={img} alt={`Image of ${title}`} />
-      <p className='item-container__url'>{url}</p>
-      <p className='item-container__title'>{title}</p>
-      <p className='item-container__subtitle'>{subtitle}</p>
-    </div>
+    <>
+      {title &&
+        <div className="detail-container">
+          <img className='detail-container__image' src={img} alt={`Image of ${title}`} key={url}/>
+          <div className='detail-container__url'>{url}</div>
+          <div className='detail-container__title'>{title}</div>
+          <div className='detail-container__description'>{description}</div>
+        </div>
+      }
+    </>
+    
   );
 };
 
