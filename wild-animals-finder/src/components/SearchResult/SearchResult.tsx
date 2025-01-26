@@ -9,7 +9,7 @@ const SearchResult: React.FC<SearchResultProps> = ({ item, onClick }) => {
   };
 
   return (
-    <div className="item-container">
+    <div className="item-container" data-testid="search">
       {item ? (
         <>
           <div className='item-container__url'>{item.url}</div>
@@ -18,9 +18,9 @@ const SearchResult: React.FC<SearchResultProps> = ({ item, onClick }) => {
         </>
       ) : (
         <>
-          <div className='item-container__url--skeleton'></div>
-          <div className='item-container__title--skeleton'></div>
-          <div className='item-container__description--skeleton'></div>
+          <div className='item-container__url--skeleton' data-testid="item-skeleton-url"></div>
+          <div className='item-container__title--skeleton' data-testid="item-skeleton-title"></div>
+          <div className='item-container__description--skeleton' data-testid="item-skeleton-description"></div>
         </>
       )}
     </div>

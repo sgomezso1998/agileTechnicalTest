@@ -18,7 +18,7 @@ const List: React.FC<ListProps> = ({ items, loading, mockItems = 15, onClick, se
             <SearchResult key={index} item={item} onClick={onClick}></SearchResult>
           )))
           :
-          (<div className='list-container__empty'>
+          (<div className='list-container__empty' data-testid="empty">
             <Empty searchQuery={searchQuery}></Empty>
           </div>)
       }
